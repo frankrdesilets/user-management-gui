@@ -1,0 +1,8 @@
+micheller@companydomain.com,Michelle,Randall,Senior Manager,Active Employee
+anthonyo@gmail.com,Anthony,Odgen,Manager,Active Employee
+nicholasr@companydomain.com,Nicholas,Russell,Manager,Active Employee
+katariina2@companydomain.com,Esmaralda,Katariina,Level 3 Engineer,Active Employee
+jacobbutler@companydomain.com,Jacob,Butler,Level 3 Engineer,Inactive Employee
+heatherc@companydomain.com,Heather,Cameron,Level 2 Engineer,Active Employee
+frankdesilets1@gmail.com,Frank,Desilets,Level 2 Engineer,Active Employee
+rees@icloud.com,James,Rees,Level 1 Engineer,Disabled Account
