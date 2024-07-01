@@ -30,7 +30,7 @@ I built this user interface to showcase skills related to user interface design 
 
 ## How to Install and Run
 
-1. Clone the repository to your Java IDE workspace. Because JavaFX is a Maven dependency, it should not need to be added to the build path.
+1. Clone and import the repository to your Java IDE workspace. Because JavaFX is a Maven dependency, it should not need to be added to the build path.
 3. Run the project (the main method is located in src/main/java/frankdesilets.User_Manager/UserManager.java).
 
 NOTE: I have run into a bug in JavaFX where on application launch an IllegalStateException is thrown stating that the location is not set. This is fixed by simply navigating to line 30 of UserManager.java and re-typing "main" in the loadFXML() method parameter and re-running. I also experienced an issue where JavaFX version 22.0.1 could not be run in the 2024 version of Eclipse, and when downgrading back to Eclipse 2023-12 4.30.0 the issue was fixed.
