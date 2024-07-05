@@ -1,7 +1,7 @@
 ![Static Badge](https://img.shields.io/badge/License-MIT-blue) ![Static Badge](https://img.shields.io/badge/JavaFX_22.0.1-629dcf)
 
-# User-Manager-UI
-This user interface facilitates the managing of users of a professional internal system, built as a personal project to practice UI/UX concepts.
+# User-Manager-GUI
+This graphical user interface facilitates the managing of users of a professional internal system, built as a personal project to practice UI/UX concepts.
 
 ![Dashboard](assets/dashboard.png)
 
