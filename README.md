@@ -24,7 +24,7 @@ I built this user interface to showcase skills related to user interface design 
 -	Filter Users
 -	Search Users
     - Searching is not case sensitive.
--	Use of a .txt file as a database
+-	Use of a .txt file for user storage
     - User modification is written in real-time to a .txt file. Each user property is separated by a comma delimiter, one account per line. Upon application launch, the file is parsed and a main user list is populated.
 
 
