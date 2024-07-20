@@ -7,8 +7,7 @@ This graphical user interface simulates user account management in a professiona
 
 
 ## Project Description
-The main view of the GUI is the Dashboard. User accounts and their properties are displayed in a table, one user per row, and controls are provided to add, delete, edit, filter, or search for users. 
-There are three supporting views: the Filter User form, used to apply filters to the user list populating the table, the Add User form, used to add a new user to the system, and the Edit User form, used to edit an existing user of the system. 
+The main view of the GUI is the Dashboard. User accounts and their properties are displayed in a table, one user per row, and controls are provided to add, delete, edit, filter, or search for users. Users are sorted in descending order by Role by default. There are three supporting views: the Filter User form, used to apply filters to the user list populating the table, the Add User form, used to add a new user to the system, and the Edit User form, used to edit an existing user of the system. 
 
 The UI was built with JavaFX 22.0.1 and Scene Builder (a visual layout tool). I used JavaFX to give the application a modern look and feel (as opposed to Java Swing), and Scene Builder to design and easily manage the components of the UI. Maven was used as the build automation tool. I developed the application with Eclipse IDE 2023-12 4.30.0.
 
@@ -40,7 +39,8 @@ NOTE: I have run into a bug in JavaFX where on application launch an IllegalStat
 ### Dashboard
 ![Dashboard](assets/dashboard.png)
 
-User accounts are managed in the Dashboard and their properties are listed in the table, one user per row. User properties include Email/ID (an account's unique identifier), First Name, Last Name, Role (a user's position in an organization, for example “Level 3 Engineer”), and Status (a user's account activity, for example “Active Employee”). Users are sorted in decending order by role by default.
+User accounts are managed in the Dashboard and their properties are listed in the table, one user per row. User properties include Email/ID (an account's unique identifier), First Name, Last Name, Role (a user's position in an organization, for example “Level 3 Engineer”), and Status (a user's account activity, for example “Active Employee”). Users are sorted in decending order by Role by default. 
+
 A user can be edited or deleted by interacting with that user’s “Edit” combo box (in the far-right column of the table) and choosing the appropriate option, as shown above. A user is deleted when “Delete User” is selected, and the view is switched to the Edit User form when “Edit User” is selected, which enables an existing user of the system to have their properties changed.
 
 There are several controls along the right of the blue Dashboard header. The “Filter” button switches the view to the Filter User form, which enables filters to be applied to the user list populating the table. The text field to the right of the “Filter” button enables searching for a user in the table. The “Clear” button to the right of the text field clears the search input and currently applied filters (it also resets the Filter User form), resetting the table to display all current users in descending order by role (the default sort method). The “Add User” button on the far-right switches the view to the Add User form, which enables a new user to be added to the system.
