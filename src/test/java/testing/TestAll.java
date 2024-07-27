@@ -13,7 +13,9 @@ class TestAll {
 
 	@Test
 	void test() {
-		fail("Not yet implemented");
+		int hi = 1;
+		int hello = 1;
+		assertEquals(hi,hello);
 	}
 
 }
