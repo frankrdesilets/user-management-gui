@@ -28,6 +28,7 @@ public class UserFileIO {
 	 * parameter and appropriately sets the member variable.
 	 * 
 	 * @param currentUserProperties
+	 * @param isTest
 	 */
 	public UserFileIO(int currentUserProperties, boolean isTest) {
 		this.currentUserProperties = currentUserProperties;
@@ -36,10 +37,9 @@ public class UserFileIO {
 
 	/**
 	 * Parses the .txt file used for storing user information and loads and returns
-	 * an ObservableList of Users. Incorrectly formatted files are not processed.
+	 * an ObservableList<User>. Incorrectly formatted files are not processed.
 	 * 
 	 * @param fileName
-	 * @param isTest
 	 * @return
 	 */
 	public ObservableList<User> loadFile(String fileName) {
@@ -101,7 +101,6 @@ public class UserFileIO {
 	 * 
 	 * @param fileName
 	 * @param accountList
-	 * @param isTest
 	 */
 	public void writeFile(String fileName, ObservableList<User> accountList) {
 
@@ -153,7 +152,6 @@ public class UserFileIO {
 	 * Checks a .txt file used for user storage for correct formatting.
 	 * 
 	 * @param fileName
-	 * @param isTest
 	 * @return
 	 */
 	public boolean isCorrectFormat(String fileName) {

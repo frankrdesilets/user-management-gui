@@ -38,6 +38,7 @@ public class User {
 		this.lastName = lastName;
 		this.role = role;
 		this.status = status;
+		// if isTest is true, the UserEditComboBox is not initialized (to prevent exceptions while testing)
 		if (!isTest) {
 			this.editComboBox = new UserEditComboBox(this);
 		}

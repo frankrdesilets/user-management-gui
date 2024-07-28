@@ -1557,9 +1557,9 @@ public class Controller implements Initializable {
 		/*
 		 * The name of the .txt file used for storage is specified and the UserFileIO
 		 * member variable is instantiated, which is used to read from and write to the
-		 * file. Testing is disabled.
+		 * file.
 		 */
-		fileIO = new UserFileIO(USER_PROPERTY_COUNT, false);
+		fileIO = new UserFileIO(USER_PROPERTY_COUNT, false); // testing is disabled
 		populateAccountList(); // the main User list is populated
 		initializeMainAnchorPane(); // the main anchor pane is initialized
 	}
