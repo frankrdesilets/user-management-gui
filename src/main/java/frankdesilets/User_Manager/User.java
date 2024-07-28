@@ -22,21 +22,25 @@ public class User {
 
 	/**
 	 * The only constructor for this class accepts user properties as parameters and
-	 * appropriately sets member variables.
+	 * appropriately sets member variables. If isTest is true, the user's 
+	 * editComboBox is not initialized.
 	 * 
 	 * @param email
 	 * @param firstName
 	 * @param lastName
 	 * @param role
 	 * @param status
+	 * @param isTest
 	 */
-	public User(String email, String firstName, String lastName, Role role, Status status) {
+	public User(String email, String firstName, String lastName, Role role, Status status, boolean isTest) {
 		this.emailID = email;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.role = role;
 		this.status = status;
-		this.editComboBox = new UserEditComboBox(this);
+		if (!isTest) {
+			this.editComboBox = new UserEditComboBox(this);
+		}
 	}
 
 	/*

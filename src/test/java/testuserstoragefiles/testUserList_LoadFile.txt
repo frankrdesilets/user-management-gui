@@ -1,0 +1,4 @@
+jacobbutler@companydomain.com,Jacob,Butler,Level 3 Engineer,Inactive Employee
+heatherc@companydomain.com,Heather,Cameron,Level 2 Engineer,Active Employee
+frankdesilets1@gmail.com,Frank,Desilets,Level 2 Engineer,Active Employee
+rees@icloud.com,James,Rees,Level 1 Engineer,Disabled Account

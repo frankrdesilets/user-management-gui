@@ -21,6 +21,7 @@ import javafx.collections.ObservableList;
 public class UserFileIO {
 
 	private int currentUserProperties; // the current number of user properties, used to check file formatting
+	private boolean isTest; // signifies if this object is being used for testing. used to specify file location
 
 	/**
 	 * The only constructor for this class accepts an int currentUserProperties as a
@@ -28,8 +29,9 @@ public class UserFileIO {
 	 * 
 	 * @param currentUserProperties
 	 */
-	public UserFileIO(int currentUserProperties) {
+	public UserFileIO(int currentUserProperties, boolean isTest) {
 		this.currentUserProperties = currentUserProperties;
+		this.isTest = isTest;
 	}
 
 	/**
@@ -37,6 +39,7 @@ public class UserFileIO {
 	 * an ObservableList of Users. Incorrectly formatted files are not processed.
 	 * 
 	 * @param fileName
+	 * @param isTest
 	 * @return
 	 */
 	public ObservableList<User> loadFile(String fileName) {
@@ -52,7 +55,16 @@ public class UserFileIO {
 		try {
 
 			// FileReaders are created to parse each line of the file
-			File currentFile = new File("src/main/java/userstoragefiles/" + fileName);
+			File currentFile;
+			/*
+			 * The file location is specified. Normal running and application testing have
+			 * different user storage file locations.
+			 */
+			if (!isTest) {
+				currentFile = new File("src/main/java/userstoragefiles/" + fileName);
+			} else {
+				currentFile = new File("src/test/java/testuserstoragefiles/" + fileName);
+			}
 			FileReader fileReader = new FileReader(currentFile);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 
@@ -66,7 +78,7 @@ public class UserFileIO {
 				String[] parsedLine = currentLine.split("[,]"); // the current line is split around delimiter ','
 				// a new User is created with parsed information and added to the list
 				User newAccount = new User(parsedLine[0], parsedLine[1], parsedLine[2], stringToRole(parsedLine[3]),
-						stringToStatus(parsedLine[4]));
+						stringToStatus(parsedLine[4]), isTest);
 				accountList.add(newAccount);
 				currentLine = bufferedReader.readLine(); // the current line is incremented
 			}
@@ -89,15 +101,23 @@ public class UserFileIO {
 	 * 
 	 * @param fileName
 	 * @param accountList
+	 * @param isTest
 	 */
 	public void writeFile(String fileName, ObservableList<User> accountList) {
 
 		try {
 			/*
 			 * A FileWriter is created to facilitate writing users to the file and the current
-			 * file contents are cleared.
+			 * file contents are cleared. Normal running and application testing have
+			 * different user storage file locations.
 			 */
-			FileWriter fileWriter = new FileWriter("src/main/java/userstoragefiles/" + fileName);
+			FileWriter fileWriter;
+			if (!isTest) {
+				fileWriter = new FileWriter("src/main/java/userstoragefiles/" + fileName);
+			} else {
+				fileWriter = new FileWriter("src/test/java/testuserstoragefiles/" + fileName);
+			}
+			
 			fileWriter.write("");
 
 			// the account list to write to the file is sorted in descending order by Role
@@ -133,6 +153,7 @@ public class UserFileIO {
 	 * Checks a .txt file used for user storage for correct formatting.
 	 * 
 	 * @param fileName
+	 * @param isTest
 	 * @return
 	 */
 	public boolean isCorrectFormat(String fileName) {
@@ -140,7 +161,16 @@ public class UserFileIO {
 		try {
 
 			// FileReaders are created to parse each line of the file
-			File currentFile = new File("src/main/java/userstoragefiles/" + fileName);
+			File currentFile;
+			/*
+			 * The file location is specified. Normal running and application testing have
+			 * different user storage file locations.
+			 */
+			if (!isTest) {
+				currentFile = new File("src/main/java/userstoragefiles/" + fileName);
+			} else {
+				currentFile = new File("src/test/java/testuserstoragefiles/" + fileName);
+			}
 			FileReader fileReader = new FileReader(currentFile);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 

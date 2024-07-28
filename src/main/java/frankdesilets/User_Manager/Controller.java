@@ -384,7 +384,7 @@ public class Controller implements Initializable {
 		 */
 		User newAccount = new User(addUserEmailEntry.getText().toLowerCase(), firstNameCapitalized, lastNameCapitalized,
 				(Role) addUserRoleEntry.getSelectionModel().getSelectedItem(),
-				(Status) addUserStatusEntry.getSelectionModel().getSelectedItem());
+				(Status) addUserStatusEntry.getSelectionModel().getSelectedItem(), false);
 		// the new user is added to the list and the storage .txt file is updated
 		mainUserList.add(newAccount);
 		fileIO.writeFile(STORAGE_FILE_NAME, mainUserList);
@@ -1557,9 +1557,9 @@ public class Controller implements Initializable {
 		/*
 		 * The name of the .txt file used for storage is specified and the UserFileIO
 		 * member variable is instantiated, which is used to read from and write to the
-		 * file.
+		 * file. Testing is disabled.
 		 */
-		fileIO = new UserFileIO(USER_PROPERTY_COUNT);
+		fileIO = new UserFileIO(USER_PROPERTY_COUNT, false);
 		populateAccountList(); // the main User list is populated
 		initializeMainAnchorPane(); // the main anchor pane is initialized
 	}
