@@ -9,7 +9,7 @@ This graphical user interface simulates user account management in a professiona
 ## Project Description
 The main view of the GUI is the Dashboard. User accounts and their properties are displayed in a table, one user per row, and controls are provided to add, delete, edit, filter, or search for users. Users are sorted in descending order by Role by default. There are three supporting views: the Filter User form, used to apply filters to the user list populating the table, the Add User form, used to add a new user to the system, and the Edit User form, used to edit an existing user of the system. 
 
-The UI was built with JavaFX 22.0.1 and Scene Builder (a visual layout tool). I used JavaFX to give the application a modern look and feel (as opposed to Java Swing), and Scene Builder to design and easily manage the components of the UI. Maven was used as the build automation tool. I developed the application with Eclipse IDE 2023-12 4.30.0.
+The UI was built with JavaFX 22.0.1 and Scene Builder (a visual layout tool). I used JavaFX to give the application a modern look and feel (as opposed to Java Swing), and Scene Builder to design and easily manage the components of the UI. Maven was used as the build automation tool. I developed the application with Eclipse IDE 2023-12 4.30.0. File I/O was tested with JUnit test cases to ensure correct file loading, user writing, and incorrect format detection. The UI controls were tested manually.
 
 ## Motivation
 I built this user interface to showcase skills related to user interface design and development, including the use of JavaFX, Scene Builder, Maven, and CSS stylesheets, and to practice concepts I learned in my Algorithms class. I am passionate about UI/UX and used this project to learn more about design centered around user experience. 
@@ -30,7 +30,7 @@ I built this user interface to showcase skills related to user interface design 
 ## How to Install and Run
 
 1. Clone and import the repository to your Java IDE workspace. Because JavaFX is a Maven dependency, it should not need to be added to the build path.
-3. Run the project (the main method is located in src/main/java/frankdesilets.User_Manager/UserManager.java).
+2. Run the project (the main method is located in src/main/java/frankdesilets.User_Manager/UserManager.java).
 
 NOTE: I have run into a bug in JavaFX where on application launch an IllegalStateException is thrown stating that the location is not set. This is fixed by simply navigating to line 30 of UserManager.java and re-typing "main" in the loadFXML() method parameter and re-running. I also experienced an issue where JavaFX version 22.0.1 could not be run in the 2024 version of Eclipse, and when downgrading back to Eclipse 2023-12 4.30.0 the issue was fixed.
 
@@ -68,3 +68,7 @@ There are two buttons at the bottom of the form. The “Cancel” button resets 
 This form enables filters to be applied to the user list populating the Dashboard user table. It is accessed by pressing the "Filter" button located on the Dashboard. The “Filter by” choice box enables selection of which user property to filter by. The remaining fields are specific to the property selected (and are enabled or disabled based on the property selected). For example, the “Ascending” and “Descending” radio buttons are only applicable to filtering by Email/ID, First Name, or Last Name, as they sort the selected property in reverse-lexicographic and lexicographic order, respectively; it is not useful to sort the role and status types in this way as roles are ordered by role type, i.e., Manager and Engineer, and status is order by account activity, i.e., Active Employee, Inactive Employee, Disabled Account.
 
 There are three buttons at the bottom of the form. The “Cancel” button resets the form and switches the view back to the Dashboard without applying any filters. The “Clear” button resets the form (and clears the current filter) without switching back to the Dashboard, and the “Apply Filter” button applies the configured filter to the Dashboard user table and switches the view back to the Dashboard, without resetting the form.
+
+## Testing
+
+File I/O was tested with JUnit test cases to ensure correct file loading, user writing, and incorrect format detection. The UI controls were tested manually.
